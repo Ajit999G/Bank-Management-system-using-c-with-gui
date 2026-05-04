@@ -1,0 +1,10 @@
+debug/adminwindow.o
+debug/bank.o
+debug/loginwindow.o
+debug/main.o
+debug/mainwindow.o
+debug/userwindow.o
+debug/moc_adminwindow.o
+debug/moc_loginwindow.o
+debug/moc_mainwindow.o
+debug/moc_userwindow.o

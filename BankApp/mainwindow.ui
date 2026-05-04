@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>674</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bank App</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* GLOBAL */
+QWidget {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+/* LEFT PANEL */
+QFrame#leftPanel {
+    background: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #3b82f6,
+        stop:1 #9333ea
+    );
+    border-radius: 15px;
+}
+
+QLabel#appTitle {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+QLabel#tagline {
+    font-size: 14px;
+    color: #e0e7ff;
+}
+
+/* LOGIN CARD */
+QFrame#loginCard {
+    background-color: #1e293b;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+/* TITLE */
+QLabel#loginTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* INPUTS */
+QLineEdit {
+    background-color: #0f172a;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #3b82f6;
+}
+
+/* BUTTONS */
+QPushButton {
+    background-color: #3b82f6;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #2563eb;
+}
+
+QPushButton:pressed {
+    background-color: #1d4ed8;
+}
+
+/* ADMIN BUTTON SPECIAL */
+QPushButton#adminBtn {
+    background-color: #9333ea;
+}
+
+QPushButton#adminBtn:hover {
+    background-color: #7e22ce;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout">
+    <item>
+     <widget class="QGroupBox" name="createBox">
+      <property name="title">
+       <string>Create Account</string>
+      </property>
+      <layout class="QFormLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Acc No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="accCreate"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="nameCreate"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>PIN</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="pinCreate"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Balance</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="balCreate"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="createBtn">
+         <property name="text">
+          <string>Create</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="loginBox">
+      <property name="title">
+       <string>Login</string>
+      </property>
+      <layout class="QFormLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Acc No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="accLogin"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>PIN</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="pinLogin"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="loginBtn">
+         <property name="text">
+          <string>Login</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>OTP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="otpInput"/>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="verifyOtpBtn">
+         <property name="text">
+          <string>Verify OTP</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="dashboardBox">
+      <property name="title">
+       <string>Dashboard</string>
+      </property>
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QLabel" name="balanceLabel">
+         <property name="text">
+          <string>Balance: ₹0</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="amountInput">
+         <property name="placeholderText">
+          <string>Enter Amount</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout">
+         <item>
+          <widget class="QPushButton" name="depositBtn">
+           <property name="text">
+            <string>Deposit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="withdrawBtn">
+           <property name="text">
+            <string>Withdraw</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="adminBtn">
+      <property name="text">
+       <string>Admin Panel</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
